@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ptrlen.c                                           :+:      :+:    :+:   */
+/*   handlepc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 18:27:01 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/12/03 14:01:44 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/12/03 14:20:09 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/12/03 14:22:34 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ptrlen(unsigned long n)
+int	handlepc(void)
 {
-	int	i;
-
-	i = 0;
-	if (n == 0)
-		return (1);
-	while (n)
-	{
-		n /= 16;
-		i++;
-	}
-	return (i);
+	ft_putchar_fd('%', 1);
+	return (1);
 }

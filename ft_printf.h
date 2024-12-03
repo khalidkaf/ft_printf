@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:26:24 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/12/02 18:33:58 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/12/03 17:32:36 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include <stdio.h>
-# include <string.h>
 # include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd);
@@ -29,5 +28,10 @@ void	printptr(unsigned long nombre);
 void	hexalow(int nombre);
 void	hexacap(int nombre);
 void	unsft_putnbr_fd(int n, int fd);
+int		handlexcap(int nbr);
+int		handlex(int nbr);
+int		handlec(int nbr);
+int		handlepc(void);
+int		handleu(int nbr);
 
 #endif
