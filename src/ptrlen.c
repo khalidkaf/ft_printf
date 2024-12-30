@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handlec.c                                          :+:      :+:    :+:   */
+/*   ptrlen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/03 14:09:02 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/12/03 14:15:31 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/12/02 18:27:01 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/12/11 12:00:47 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-int	handlec(int nbr)
+int	ptrlen(unsigned long n)
 {
-	ft_putchar_fd(nbr, 1);
-	return (1);
+	int	i;
+
+	i = 0;
+	if (n == 0)
+		return (1);
+	while (n)
+	{
+		n /= 16;
+		i++;
+	}
+	return (i);
 }

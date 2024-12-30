@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nbrlen.c                                           :+:      :+:    :+:   */
+/*   handlex.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 18:26:55 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/12/02 18:30:02 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/12/03 14:06:59 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/12/11 12:00:33 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-int	nbrlen(long n)
+int	handlex(int nbr)
 {
-	int	i;
+	int	value;
 
-	i = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-	{
-		i++;
-		n = -n;
-	}
-	while (n)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
+	value = 0;
+	hexalow(nbr);
+	return (value += hexalen(nbr));
 }

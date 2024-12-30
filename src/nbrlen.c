@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handleu.c                                          :+:      :+:    :+:   */
+/*   nbrlen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/03 16:28:28 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/12/03 16:39:38 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/12/02 18:26:55 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/12/11 12:00:43 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-int	handleu(int nbr)
+int	nbrlen(long n)
 {
-	int	value;
+	int	i;
 
-	value = 0;
-	unsft_putnbr_fd(nbr, 1);
-	return (value += unsignednbrlen(nbr));
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		i++;
+		n = -n;
+	}
+	while (n)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
 }

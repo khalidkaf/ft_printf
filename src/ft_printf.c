@@ -6,11 +6,11 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:26:35 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/12/03 17:51:58 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/12/22 23:04:41 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	handles(char *str)
 {
@@ -152,14 +152,10 @@ int	ft_printf(const char *str, ...)
 // 	// 	-1245, 57419, trois);
 // 	free(c);
 // }
-
-// /*int main(void)
+// int main(void)
 // {
-// 	char	*str = malloc(sizeof(char) * 5);
-// 	ft_printf("%p", str);
+// 	char	*str = NULL;
+// 	ft_printf("%p\n", str);
 // 	printf("%p", str);
 // 	return (0);
-// }*/
-
-// // // 0x8000000000000000
-// // // 0x7fffffffffffffff
+// }

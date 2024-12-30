@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handlepc.c                                         :+:      :+:    :+:   */
+/*   printptr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/03 14:20:09 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/12/03 14:22:34 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/12/02 18:26:47 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/12/11 12:00:45 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-int	handlepc(void)
+void	printptr(unsigned long nombre)
 {
-	ft_putchar_fd('%', 1);
-	return (1);
+	char	*hexacenter;
+
+	hexacenter = "0123456789abcdef";
+	if (nombre > 15)
+	{
+		printptr(nombre / 16);
+		printptr(nombre % 16);
+	}
+	if (nombre < 16)
+	{
+		ft_putchar_fd(hexacenter[nombre], 1);
+	}
 }

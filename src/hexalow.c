@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   hexalow.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 10:03:19 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/12/02 18:32:40 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/12/02 18:26:42 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/12/11 12:00:42 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	hexalow(int nombre)
 {
-	long	nbr;
-	int		i;
+	unsigned int	nbr;
+	char			*hexacenter;
 
-	nbr = n;
-	i = 0;
-	if (n < 0)
+	hexacenter = "0123456789abcdef";
+	nbr = nombre;
+	if (nbr > 15)
 	{
-		write(fd, "-", 1);
-		nbr = nbr * -1;
+		hexalow(nbr / 16);
+		hexalow(nbr % 16);
 	}
-	if (nbr > 9)
+	if (nbr < 16)
 	{
-		ft_putnbr_fd(nbr / 10, fd);
-		ft_putnbr_fd(nbr % 10, fd);
-	}
-	else
-	{
-		ft_putchar_fd(nbr + 48, fd);
+		ft_putchar_fd(hexacenter[nbr], 1);
 	}
 }
-
-// int	main(void)
-// {
-// 	ft_putnbr_fd(0, 1);
-// 	// putnbr(6);
-// }

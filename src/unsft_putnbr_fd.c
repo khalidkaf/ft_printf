@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   unsft_putnbr_fd.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 20:00:42 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/12/01 18:46:53 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/12/02 18:26:18 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/12/11 12:00:49 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	unsft_putnbr_fd(int n, int fd)
 {
-	write(fd, &c, 1);
-}
+	unsigned int	nbr;
+	int				i;
 
-// int	main(void)
-// {
-// 	char c = 'k';
-// 	int fd = 1;
-// 	ft_putchar_fd(c, fd);
-// }
+	nbr = n;
+	i = 0;
+	if (nbr > 9)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+		ft_putnbr_fd(nbr % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd(nbr + 48, fd);
+	}
+}

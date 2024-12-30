@@ -6,11 +6,11 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 18:36:50 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/30 21:52:31 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/12/11 12:00:09 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	ft_atoi(const char *nptr)
 {
